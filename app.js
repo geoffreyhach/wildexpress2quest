@@ -18,6 +18,10 @@ const { getUsers, getUserById } = require("./userHandlers");
 app.get("/api/movies", movieHandlers.getMovies);
 app.get("/api/movies/:id", movieHandlers.getMovieById);
 
+app.get("/api/users", getUsers);
+app.get("/api/users/:id", getUserById);
+
+
 app.listen(port, (err) => {
     if (err) {
         console.error("Something bad happened");
@@ -26,5 +30,3 @@ app.listen(port, (err) => {
     }
 });
 
-app.get("/api/users", getUsers);
-app.get("/api/users/:id", getUserById);
